@@ -1,39 +1,37 @@
 import 'dart:io';
 
 void main() {
-  int Insert, Delete, Update, View, choice;
+  List<List<int>> a = [
+    [1, 2, 3],
+    [7, 8, 9],
+    [4, 5, 6],
+  ];
+  List<List<int>> b = [
+    [7, 8, 9],
+    [10, 11, 12],
+    [13, 14, 15],
+  ];
 
-  print("press 1 for Insert..");
-  print("press 2 for Delete..");
-  print("press 3 for Update..");
-  print("press 4 for View..");
 
-  stdout.write("Enter your choice :- ");
-  choice = int.parse(stdin.readLineSync()!);
+  for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+      stdout.write('Enter element of a[$i][$j] : ');
+      int val = int.parse(stdin.readLineSync()!);
+      a[i][j] = val;
+    }
+  }
 
-  List<int> demo = [1, 2, 3];
-  switch (choice) {
-    case 1:
-      demo.add(4);
-      print("$demo");
-      break;
 
-    case 2:
-      demo.remove(1);
-      print("$demo");
-      break;
-
-    case 3:
-      demo.replaceRange(1, 3, [2, 3]);
-      print("$demo");
-      break;
-
-    case 4:
-      demo.add(3);
-      print("$demo");
-      break;
-    default:
-      stdout.write("invlid choise...!!");
-      break;
+  for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+      stdout.write('Enter element of a[$i][$j] : ');
+      int val = int.parse(stdin.readLineSync()!);
+      a[i][j] = val;
+    }
+  }
+  print("Sum of Array:"); 
+  for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) stdout.write("${a[i][j] + b[i][j]} ");
+    print('');
   }
 }
