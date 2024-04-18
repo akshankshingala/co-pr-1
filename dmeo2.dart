@@ -6,17 +6,17 @@ void main() {
   print("Enter any 10 numbers: ");
 
   for (int i = 0; i < 10; i++) {
-    String userInput = stdin.readLineSync()!;
-    int number = int.parse(userInput);
-    allNumbers.add(number);
+    String enterinput = stdin.readLineSync()!;
+    int num = int.parse(enterinput);
+    allNumbers.add(num);
   }
 
-  int largestNumber = allNumbers[0];
+  int bigetsNumber = allNumbers[0];
   for (int i = 1; i < allNumbers.length; i++) {
-    if (allNumbers[i] > largestNumber) {
-      largestNumber = allNumbers[i];
+    if (allNumbers[i] > bigetsNumber) {
+      bigetsNumber = allNumbers[i];
     }
   }
 
-  print('The largest number is: $largestNumber');
+  print('The largest number is: $bigetsNumber');
 }
