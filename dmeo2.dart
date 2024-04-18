@@ -1,12 +1,12 @@
-5import 'dart:io';
+import 'dart:io';
 
 void main() {
   List<int> allNumbers = [];
 
   print("Enter any 15 numbers: ");
 
-  for (int i = 0; i < 10; i++) {
-    String enterinput = stdin.readLineSync()!;
+  for (int i = 0; i < 15; i++) {
+    String enterinput = (stdin.readLineSync()!);
     int num = int.parse(enterinput);
     allNumbers.add(num);
   }
