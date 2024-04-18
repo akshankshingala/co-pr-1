@@ -1,96 +1,83 @@
 import 'dart:io';
-
 void main() {
-  int choice, x, y, sum;
-
-  print("press 1 for sum of all elements..");
-  print("press 2 for rowsum..");
-  print("press 3 for colom sum..");
-  print("press 4 for daigonal..");
-  print("press 5 for anti daigonal..");
-  print("press 6 for exit progaram..");
-
-  stdout.write("Enter your choice :- ");
-  choice = int.parse(stdin.readLineSync()!);
-
-  List a = [
-    [3, 7, 8],
-    [6, 8, 2],
-    [3, 6, 4]
-  ];
-  List b = [
-    [8, 8, 8],
-    [8, 8, 8],
-    [8, 8, 8]
-  ];
-  List c = [
-    [1, 1, 1],
-    [1, 1, 1],
-    [1, 1, 1]
-  ];
-  switch (choice) {
-    case 1:
-      for (int i = 0; i <= 2; i++) {
-        for (int j = 0; j <= 2; j++) {
-          c[i][j] = a[i][j] + b[i][j];
-        }
-      }
-
-      print("$c");
-      break;
-    case 2:
-      stdout.write("Enter your  row number ");
-      x = int.parse(stdin.readLineSync()!);
-      for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-          if (i == x) {
-            sum = a[x][j] + b[x][j];
-            print("$sum");
+  while (true) {
+    var array1 = [
+      [3, 2, 1],
+      [6, 5, 4],
+      [9, 8, 7]
+    ];
+    List<List<int>> myArray = array1.map((e) => e.toList()).toList();
+    print("Array : ");
+    myArray.forEach((element) {
+      stdout.write("$element ");
+      print("");
+    });
+    print("Press 1 for sum of all elements : ");
+    print("Press 2 for sum of specific row : ");
+    print("Press 3 for sum of specific column : ");
+    print("Press 4 for sum of diagonal elements : ");
+    print("Press 5 for sum of antidiagonal elements : ");
+    print("Press 0 for exit : ");
+    int choice;
+    stdout.write("Enter your choice number : ");
+    choice = int.parse(stdin.readLineSync()!);
+    switch (choice) {
+      case 1:
+        int sum = 0;
+        for (int i = 0; i < myArray.length; i++) {
+          for (int j = 0; j < myArray[i].length; j++) {
+            sum += myArray[i][j];
           }
         }
-      }
-      break;
-
-    case 3:
-      stdout.write("Enter your  colom number ");
-      y = int.parse(stdin.readLineSync()!);
-      for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-          if (i == y) {
-            sum = a[i][y] + b[i][y];
-            print("$sum");
-          }
+        print("The sum of all the elements in the Array are : $sum");
+        break;
+      case 2:
+        print("The sum of the row from the Array is : ");
+        stdout.write("Enter the row number : ");
+        int rowNum = int.parse(stdin.readLineSync()!);
+        if (rowNum > myArray.length) {
+          print("Invalid row number");
+          break;
         }
-      }
-      break;
-
-    case 4:
-      for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-          if (i == j) {
-            sum = a[i][j] + b[i][j];
-            print("$sum");
-          }
+        int rowSum = 0;
+        for (int j = 0; j < myArray[rowNum - 1].length; j++) {
+          rowSum += myArray[rowNum - 1][j];
         }
-      }
-      break;
-
-    case 5:
-      for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-          if (i + j == a[i][j] - 1) {
-            sum = a[i][j] + b[i][j];
-            print("$sum");
-          }
+        print("The sum of row $rowNum is : $rowSum");
+        break;
+      case 3:
+        print("The sum of the column from the Array is : ");
+        stdout.write("Enter the column number : ");
+        int colNum = int.parse(stdin.readLineSync()!);
+        if (colNum > myArray[0].length) {
+          print("Invalid column number");
+          break;
         }
-      }
-      break;
-
-    case 6:
-      stdout.write("data finish......");
-      break;
-    default:
-      stdout.write("invlid input....");
-      break;
+        int colSum = 0;
+        for (int i = 0; i < myArray.length; i++) {
+          colSum += myArray[i][colNum - 1];
+        }
+        print("The sum of column $colNum is : $colSum");
+        break;
+      case 4:
+        int diagSum = 0;
+        for (int i = 0; i < myArray.length; i++) {
+          diagSum += myArray[i][i];
+        }
+        print("The SUM of all the DIAGONAL elements in the Array is : $diagSum");
+        break;
+      case 5:
+        int antiDiagSum = 0;
+        for (int i = 0; i < myArray.length; i++) {
+          antiDiagSum += myArray[i][myArray[i].length - 1 - i];
+        }
+        print("The Sum of all the anti-diagonal elements in the Array is : $antiDiagSum");
+        break;
+      case 6:
+        print("Exiting the menu-driven code.....");
+        return;
+      default:
+        print("Invalid number Input ");
   }
+ }
 }
