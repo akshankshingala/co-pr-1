@@ -3,12 +3,12 @@ import 'dart:io';
 void main() {
   int n;
 
-  print("ENTER ANY NUMBER");
+  print("enter any value");
   n = int.parse(stdin.readLineSync()!);
 
   if (n > 0) {
-    print("NUMBER IS POSITIVE");
+    print("number is positive");
   } else {
-    print("NUMBER IS NAGATIVE");
+    print("number is nagetive");
   }
 }
