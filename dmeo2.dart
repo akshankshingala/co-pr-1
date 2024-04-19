@@ -1,6 +1,3 @@
-/*
- write a dart program to find largest number in array  
-*/
 import 'dart:io';
 
 void main() {
@@ -9,7 +6,7 @@ void main() {
   print("Enter any 10 numbers: ");
 
   for (int i = 0; i < 10; i++) {
-    String a = stdin.readLineSync()!;
+    String a = (stdin.readLineSync()!);
     int n = int.parse(a);
     Number.add(n);
   }
