@@ -1,7 +1,6 @@
 import 'dart:io';
 void main(){
-  var array = [];
-  List myarray = array.toList();
+  List myarray = array.toList[];
   
   stdout.write("enter element your Array : ");
   int len = int.parse(stdin.readLineSync()!);
