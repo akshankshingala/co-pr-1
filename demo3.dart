@@ -1,10 +1,3 @@
-/*
-write a dart program to insert,update,delete, and view opration  on the elements in 
-an array using menu -driven programing approach
-*/
-
-
-
 import 'dart:io';
 
 void main() {
