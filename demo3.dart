@@ -1,13 +1,13 @@
 import 'dart:io';
 
 void main() {
-  var array = [1, 2, 3, 4];
-  List myArray = array.toList();
+  var array 
+  List myArray = array[1, 2, 3, 4].tolist();
   int choice;
 
   do {
     
-    print("press 1 to add  element   ");
+    print("press 1 to insert  element   ");
     print("press 2  Update  element   ");
     print("press 3 to Remove  element  ");
     print("press 4 to View  elements   ");
