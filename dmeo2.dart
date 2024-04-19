@@ -3,9 +3,9 @@ import 'dart:io';
 void main() {
   List<int> Number = [];
 
-  print("Enter any 10 numbers: ");
+  print("Enter any  numbers: ");
 
-  for (int i = 0; i < 10; i++) {
+  for (int i = 0; i < n ; i++) {
     String a = (stdin.readLineSync()!);
     int n = int.parse(a);
     Number.add(n);
