@@ -1,56 +1,60 @@
+/*
+write a dart program to insert,update,delete, and view opration  on the elements in 
+an array using menu -driven programing approach
+*/
+
+
+
 import 'dart:io';
-void main(){
-    var array = [1,2,3,4];
-    List myArray = array.toList();
+
+void main() {
+  var array = [1, 2, 3, 4];
+  List myArray = array.toList();
+  int choice;
+
+  do {
     
-    print("Enter 1 to insert an element in the Array  ");
-    
-    print("Enter 2 to Delete an element in the Array  ");
-    
-    print("Enter 3 to update an element in the Array  ");
-    
-    print("Enter 4 to View the elements in the Array  ");
-    
-    stdout.write("Enter Your element : ");
-    int choice = int.parse(stdin.readLineSync()!);
-    
-    switch(choice){
-            
+    print("press 1 to add  element   ");
+    print("press 2  Update  element   ");
+    print("press 3 to Remove  element  ");
+    print("press 4 to View  elements   ");
+    print("press 0 to Exit ");
+    stdout.write("Enter Your Choice : ");
+    choice = int.parse(stdin.readLineSync()!);
+
+    switch (choice) {
       case 1:
-        stdout.write("Enter Array Element  : ");
+        stdout.write("add Element  : ");
         int addVar = int.parse(stdin.readLineSync()!);
-            
         myArray.add(addVar);
         print(myArray);
         break;
-            
       case 2:
-        stdout.write("Enter Array Element : ");
+        stdout.write(" Update  Elements: ");
         int index = int.parse(stdin.readLineSync()!);
-            
         print("");
-        stdout.write("Enter Array Element : ");
-        int newele = int.parse(stdin.readLineSync()!);
-            
-        myArray[index] = newele;
+        stdout.write("Enter the Element  : ");
+        int newElements = int.parse(stdin.readLineSync()!);
+        myArray[index] = newElements;
         print(myArray);
         break;
-            
       case 3:
-        stdout.write("Enter Array Element: ");
+        stdout.write(" Remove Elements : ");
         int removeVar = int.parse(stdin.readLineSync()!);
-            
         myArray.remove(removeVar);
         print(myArray);
         break;
-            
       case 4:
-        stdout.write("You are Viewing the List : ");
+        stdout.write(" Viewing Elements  : ");
         myArray.forEach((element) {
           stdout.write("$element  ");
         });
         break;
+      case 0:
+        print("Exiting...");
+        break;
       default:
-        print("Invalid input!!");
- }
+        print("Invalid Choice!!");
+    }
+  } while (choice != 0);
 }
