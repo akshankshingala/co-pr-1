@@ -1,10 +1,3 @@
-/*
-  
-  write a dart progrem to addition of two matries of dimension
-*/
-
-
-
 import 'dart:io';
 void main(){
   List<List<int>> Array1 = [
