@@ -1,7 +1,6 @@
 import 'dart:io';
 
 void main() {
-  var array 
   List myArray = array[1, 2, 3, 4].tolist();
   int choice;
 
