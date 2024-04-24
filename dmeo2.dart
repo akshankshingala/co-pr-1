@@ -1,22 +1,20 @@
 import 'dart:io';
 
 void main() {
-  List<int> Number = [];
-
-  print("Enter any  numbers: ");
-
-  for (int i = 0; i < n ; i++) {
-    String a = (stdin.readLineSync()!);
-    int n = int.parse(a);
-    Number.add(n);
-  }
-
-  int largestNumber = Number[0];
-  for (int i = 1; i < Number.length; i++) {
-    if (Number[i] > largestNumber) {
-      largestNumber = Number[i];
-    }
-  }
-
-  print('\nThe largest number is: $largestNumber');
+    List<int> myArray = [];
+    stdout.write("Enter your Array number : ");
+    int len = int.parse(stdin.readLineSync()!);
+    myArray = List.generate(len, (i) {
+      stdout.write("Enter the Element for Array ${i+1} : ");
+      int el = int.parse(stdin.readLineSync()!);
+      myArray.add(el);
+      return el;
+    });
+    int large = myArray[0];
+    myArray.forEach((element) {
+      if(element>large){
+        large = element;
+      }
+    });
+    print("The Largest Element in the Array is : $large");
 }
