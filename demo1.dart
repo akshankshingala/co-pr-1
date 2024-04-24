@@ -1,28 +1,23 @@
 import 'dart:io';
 void main(){
-  List myarray =[];
-  
-  stdout.write("enter element your Array : ");
+  List myArray = [];
+  stdout.write("How many elements do you want in your Array : ");
   int len = int.parse(stdin.readLineSync()!);
-  
-  for(int i = 1 ; i <= len ; i++){
-    stdout.write("Enter Element $i : ");
-    
-    int ele = int.parse(stdin.readLineSync()!);
-    myarray.add(ele);
-  }
+  myArray = List.generate(len, (i) {
+      stdout.write("Enter the value for Element ${i+1} : ");
+      int el = int.parse(stdin.readLineSync()!);
+      myArray.add(el);
+      return el;
+    });
   print("Elements in the Array are : ");
-  myarray.forEach((element) {
+  myArray.forEach((element) {
       stdout.write("$element   ");
   });
-  
   print("");
-  print(" enter negative Elements in  Array  : ");
-  myarray.forEach((element) {
-    
+  print("Negative Elements: ");
+  myArray.forEach((element) {
     if(element<0){
       stdout.write("$element   ");
- }
-});
+    }
+  });
 }
-
