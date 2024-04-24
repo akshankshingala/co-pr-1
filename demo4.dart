@@ -1,31 +1,41 @@
 import 'dart:io';
-void main(){
-  List<List<int>> Array1 = [
-    [11, 12, 13],
-    [14, 15, 16],
-    [17, 18, 19],
-  ];
-    List<List<int>> Array2 = [
-    [90, 80, 70],
-    [60, 50, 40],
-    [30, 20, 10],
-  ];
-  print("\n Array 1 \n : ");
-  Array1.forEach((e) {
-    stdout.write("$e ");
+
+void main() {
+  stdout.write("Enter Row : ");
+  int row = int.parse(stdin.readLineSync()!);
+  print("");
+  stdout.write("Enter Column : ");
+  int col = int.parse(stdin.readLineSync()!);
+  List<List<int>> myArray1 = List.generate(row, (i) {
+    return List.generate(col, (j) {
+      stdout.write("Enter value  ${[i]} ${[j]}: ");
+      return int.parse(stdin.readLineSync()!);
+    });
+  });
+  List<List<int>> myArray2 = List.generate(row, (i) {
+    return List.generate(col, (j) {
+      stdout.write("Enter value ${[i]} ${[j]}: ");
+      return int.parse(stdin.readLineSync()!);
+    });
+  });
+  print("Array 1 : ");
+  myArray1.forEach((element) {
+    stdout.write("$element ");
     print("");
   });
-  print("\n Array 2 \n:");
-  Array2.forEach((e) {
-    stdout.write("$e ");
+  print("Array 2 :");
+  myArray2.forEach((element) {
+    stdout.write("$element ");
     print("");
   });
-  print("\nArray 1 + Array 2 :\n");
-  Array1.forEach((e) {
-    Array2.forEach((e) {
-      stdout.write("${e + e} ");
-      print("");
-     });
+  print("Array 1 + Array 2 :");
+  List<List<int>> myArray3 = List.generate(row, (i) {
+    return List.generate(col, (j) {
+      return myArray1[i][j] + myArray2[i][j];
+    });
+  });
+  myArray3.forEach((element) {
+    stdout.write("$element ");
+    print("");
   });
-  
 }
