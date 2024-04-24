@@ -36,11 +36,11 @@ void main() {
             sum += myArray[i][j];
           }
         }
-        print("The SUM of all the elements : $sum");
+        print("The sum of all the elements : $sum");
         print("~");
         break;
       case 2:
-        print("The SUM of the ROW : ");
+        print("The sum of the ROW : ");
         stdout.write("Enter the row number : ");
         int rowNum = int.parse(stdin.readLineSync()!);
         if (rowNum > myArray.length) {
@@ -56,7 +56,7 @@ void main() {
         print("~");
         break;
       case 3:
-        print("The SUM of the column : ");
+        print("The sum of the column : ");
         stdout.write("Enter the column number : ");
         int colNum = int.parse(stdin.readLineSync()!);
         if (colNum > myArray[0].length) {
@@ -76,7 +76,7 @@ void main() {
         for (int i = 0; i < myArray.length; i++) {
           diagonalSum += myArray[i][i];
         }
-        print("The SUM of all the diagonal  : $diagonalSum");
+        print("The sum of all the diagonal  : $diagonalSum");
         print("~");
         break;
       case 5:
